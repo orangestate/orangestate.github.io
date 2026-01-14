@@ -1,0 +1,54 @@
+.task-content {
+    text-align: left;
+}
+h1 ,h2, h3{
+    text-align: center;
+}
+.table-example{
+    left: 50%;
+    margin: 0 auto;
+}
+.btn{
+    margin: 20px;
+}
+.btn:hover{
+    background-color: #6800ff;
+}
+#phrase-table{
+    margin: 20px auto;
+}
+
+
+
+.class1, .class2{
+    color: #000000;
+}
+
+.class1 {
+    background-color: #d1f5ff;
+}
+
+.class2 {
+    background-color: #ffe4d1;
+}
+
+#phrases div {
+    padding: 8px;
+    margin: 5px 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px 12px;
+}
+th{
+    width: 255px;
+}

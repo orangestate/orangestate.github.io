@@ -1,0 +1,42 @@
+.drag-area{
+    position: relative;
+    height: 585px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 12px;
+    border: 2px dashed red;
+}
+
+.piece{
+    position:absolute;
+    cursor: grab;
+    user-select: none;
+}
+.foot{
+    max-width: 58px;
+    max-height: 50px;
+}
+.tree-footer{
+    max-width: 299px;
+    max-height: 117px;
+}
+.star{
+    max-width: 157px;
+    max-height: 123px;
+}
+.tree-head{
+    max-width: 264px;
+    max-height: 134px;
+}
+.tree-body{
+    max-width: 314px;
+    max-height: 118px;
+}
+.house1{
+    max-width: 235px;
+    max-height: 200px;
+}
+.roof{
+    max-width: 405px;
+    height: 500px;
+}
+

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" type="image/png" href="/images/favicon.svg">
+    <meta charset="UTF-8">
+    <title>Задание 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="task4.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo snail-logo">
+        <div class="snail">
+            <div class="shell"></div>
+            <div class="body"></div>
+            <div class="head">
+                <div class="eye eye-left"></div>
+                <div class="eye eye-right"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav">
+        <ul class="menu">
+            <li><a href="../../index.html">Главная</a></li>
+            <li><a href="../../articles.html">Статьи</a></li>
+
+            <li class="dropdown">
+                <a href="#">Задания</a>
+                <ul class="dropdown-menu">
+                    <li><a href="../task2/task2.html">Задание 2</a></li>
+                    <li><a href="../task3/task3.html">Задание 3</a></li>
+                    <li><a href="task4.html">Задание 4</a></li>
+                    <li><a href="../task5/task5.html">Задание 5</a></li>
+                </ul>
+            </li>
+
+            <li><a href="../coursework.html">Курсовая</a></li>
+            <li><a href="../../contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="main">
+    <section class="hero">
+        <div class="task-content">
+        <h2>Задание 4</h2>
+
+        <p>
+            В данном задании необходимо работать с массивами строк, классами CSS
+            и динамическим созданием элементов страницы.
+        </p>
+
+        <h3>Общее для всех вариантов</h3>
+
+        <p>
+            Существует два массива: массив латинских высказываний и массив их переводов
+            (допускается добавление собственных фраз).
+        </p>
+
+        <ul>
+            <li><b>Consuetudo est altera natura</b> — «Привычка — вторая натура»</li>
+            <li><b>Nota bene</b> — «Заметьте хорошо!»</li>
+            <li><b>Nulla calamitas sola</b> — «Беда не приходит одна»</li>
+            <li><b>Per aspera ad astra</b> — «Через тернии к звёздам»</li>
+        </ul>
+
+        <p>
+            Необходимо создать два CSS-класса <b>class1</b> и <b>class2</b>,
+            в которых заданы разные цвета фона.
+        </p>
+
+        <p>
+            При каждом <b>чётном</b> нажатии на кнопку фраза выводится с применением
+            класса <b>class1</b>, при <b>нечётном</b> — с применением <b>class2</b>.
+        </p>
+
+        <p>
+            Фразы выводятся в случайном порядке без повторений.
+            После окончания фраз выводится сообщение:
+            <b>«Фразы закончились»</b>.
+        </p>
+
+        <p>
+            По нажатию на кнопку <b>«Перекрасить»</b> у всех чётных строк
+            изменяется начертание шрифта на полужирное.
+        </p>
+
+        <h3>Задание 1</h3>
+
+        <p>
+            В части <b>content</b> необходимо создать таблицу с заголовочной строкой:
+        </p>
+
+        <table class="table-example">
+            <tr>
+                <th>Латинский язык</th>
+                <th>Русский язык</th>
+            </tr>
+            <tr>
+                <td>Nota bene</td>
+                <td>Заметьте хорошо!</td>
+            </tr>
+            <tr>
+                <td>Nulla calamitas sola</td>
+                <td>Беда не приходит одна</td>
+            </tr>
+        </table>
+
+        <p>
+            Также на странице должна присутствовать кнопка <b>«Создать»</b>,
+            по нажатию на которую добавляется новая строка в таблицу,
+            содержащая латинскую фразу и её перевод.
+        </p>
+
+        <p><i>Реализация логики будет выполнена позже.</i></p>
+        </div>
+        <div class="content">
+            <h3>Реализация</h3>
+
+            <button id="addRowBtn" class="btn">Создать</button>
+            <button id="recolorBtn" class="btn">Перекрасить</button>
+            <button id="clearBtn" class="btn">Очистить фразы</button>
+            <table id="phrase-table" class="table-example">
+                <tr>
+                    <th>Латинский язык</th>
+                    <th>Русский язык</th>
+                </tr>
+            </table>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2025 Курс «Верстка и прототипирование сайтов»</p>
+    <p>
+        <a href="https://github.com/orangestate">GitHub</a> ·
+        <a href="../../contacts.html">Контакты</a>
+    </p>
+</footer>
+<script src="task4.js"></script>
+</body>
+</html>

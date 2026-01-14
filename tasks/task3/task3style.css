@@ -1,0 +1,132 @@
+/* Флексим*/
+
+
+.flex-ad {
+    margin: 40px auto;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Фон */
+.scene {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background: url("../../images/background.jpg") no-repeat center / cover;
+    overflow: hidden;
+}
+
+
+.sun {
+    position: absolute;
+    top: 25px;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+    background: url("../../images/sun.png") no-repeat center / contain;
+    opacity: 0;
+}
+
+/* Елка */
+.tree {
+    position: absolute;
+    right: 85px;
+    bottom: 20px;
+    width: 115px;
+    height: 115px;
+    background: url("../../images/tree.png") no-repeat center / contain;
+}
+
+/* Лис */
+.fox {
+    position: absolute;
+    bottom: 20px;
+    left: 185px;
+    width: 80px;
+    height: 80px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* Бегущая лиса */
+.fox-run {
+    background-image: url("../../images/fox-run.png");
+    transition: left 1.2s ease, opacity 0.4s ease;
+}
+
+/* Лиса смотрит */
+.fox-watch {
+    background-image: url("../../images/fox-watch.png");
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Бег лисы */
+.flex-ad:hover .fox-run {
+    left: 95px;
+}
+
+.flex-ad:hover .title {
+    opacity: 1;
+}
+
+/* Солнце появление */
+.flex-ad:active .sun {
+    opacity: 1;
+    animation: sun-move 1s infinite alternate ease-in-out;
+}
+
+.flex-ad:active .fox-run {
+    opacity: 0;
+}
+
+.flex-ad:active .fox-watch {
+    opacity: 1;
+    left: 95px;
+}
+
+.flex-ad:active .title {
+    opacity: 0;
+}
+
+/* Солнце movement */
+@keyframes sun-move {
+    from { left: 5px; }
+    to   { left: 140px; top: 5px; }
+}
+
+/* Тряска animation */
+#shake-toggle:checked + .flex-ad {
+    animation: shake 0.35s infinite;
+}
+
+
+
+/* Тряска пошла */
+@keyframes shake {
+    0%   { transform: translateY(0); }
+    25%  { transform: translateY(-3px); }
+    50%  { transform: translateY(3px); }
+    75%  { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
+}
+
+/* Текст */
+.title {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    right: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #000;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}

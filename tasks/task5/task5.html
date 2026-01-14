@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 5 — Перетаскивание объектов</title>
+    <link rel="icon" type="image/svg" href="../../images/favicon.svg">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="task5.css">
+</head>
+<body>
+
+
+
+<header class="header">
+    <div class="logo snail-logo">
+        <div class="snail">
+            <div class="shell"></div>
+            <div class="body"></div>
+            <div class="head">
+                <div class="eye eye-left"></div>
+                <div class="eye eye-right"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav">
+        <ul class="menu">
+            <li><a href="../../index.html">Главная</a></li>
+            <li><a href="../../articles.html">Статьи</a></li>
+            <li class="dropdown">
+                <a href="#">Задания</a>
+                <ul class="dropdown-menu">
+                    <li><a href="../task2/task2.html">Задание 2</a></li>
+                    <li><a href="../task3/task3.html">Задание 3</a></li>
+                    <li><a href="../task4/task4.html">Задание 4</a></li>
+                    <li><a href="task5.html">Задание 5</a></li>
+                </ul>
+            </li>
+            <li><a href="../../coursework.html">Курсовая</a></li>
+            <li><a href="../../contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<main class="main">
+<section class="hero">
+    <h1>Задание 5</h1>
+    <p>Разработать и реализовать на странице сайта перетаскивание объектов в зависимости от варианта задания. Библиотеки использовать нельзя. Страница расположена на сайте, а не на пустой страничке.
+    Элементы для задания подбираете самостоятельно.
+    Приветствуется отрисовка своих собственных фигур.
+    Количество собираемых элементов не менее 4.
+    Базовые фигуры должны быть повернуты. Реализуйте механизм поворота фигуры.
+    Если картинка будет собрана правильно, то пользователь видит анимацию. Готовая картинка может располагаться в любом месте контента.</p>
+    <h2>Вариант 1. Собрать домик.</h2>
+    <section class="content-block container">
+        <h2 style="text-align:center;">Собери домик</h2>
+
+        <div class="drag-area" id="dragArea">
+
+            <div class="house-outline"></div>
+
+            <img src="../../images/task5img/roof2.png" class="piece roof"
+                 data-x="260" data-y="60" data-rot="0">
+
+            <img src="../../images/task5img/h2.png" class="piece house1"
+                 data-x="250" data-y="140" data-rot="0">
+
+            <img src="../../images/task5img/tree-head.png" class="piece tree-head"
+                 data-x="300" data-y="20" data-rot="0">
+
+            <img src="../../images/task5img/tree-body.png" class="piece tree-body"
+                 data-x="310" data-y="190" data-rot="0">
+
+            <img src="../../images/task5img/tree-footer.png" class="piece tree-footer"
+                 data-x="250" data-y="260" data-rot="0">
+
+            <img src="../../images/task5img/tree-foot.png" class="piece foot"
+                 data-x="360" data-y="90" data-rot="90">
+
+            <img src="../../images/task5img/tree-star.png" class="piece star"
+                 data-x="340" data-y="10" data-rot="0">
+
+        </div>
+    </section>
+</section>
+</main>
+
+<footer class="footer">
+    <p>© 2025 Курс «Верстка и прототипирование сайтов»</p>
+    <p><a href="https://github.com/orangestate">GitHub</a> · <a href="../../contacts.html">Контакты</a></p>
+</footer>
+<script src="task5.js"></script>
+</body>
+</html>

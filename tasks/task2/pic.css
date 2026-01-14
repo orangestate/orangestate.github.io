@@ -1,0 +1,222 @@
+.picture {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background: #fff;
+    margin: 0 auto;
+}
+
+/* ===== Дно ===== */
+.basket {
+    position: absolute;
+    bottom: 0;
+    width: 180px;
+    left: 10px;
+    height: 45px;
+    background: repeating-linear-gradient(
+            90deg,
+            #ffeb00,
+            #ffeb00 12px,
+            #eab308 12px,
+            #eab308 24px
+    );
+}
+.fish-big .red-stripe {
+    scale: 2;
+    transform: rotate(-90deg);
+    position: absolute;
+    width: 19px;
+    height: 25px;
+    border: 2px solid #dc2626;
+    border-color: #dc2626  transparent transparent;
+    border-radius: 70% 70% 70% 70%;
+    top: 1px;
+    left: 55px;
+}
+.fish-small .red-stripe {
+    transform: scale(1.5) rotate(-90deg); /* Поворот и масштабирование */
+    position: absolute;
+    width: 18px;
+    height: 20px; /* Пропорционально для маленькой рыбы */
+    border: 2px solid #dc2626;
+    border-color: #dc2626 transparent transparent;
+    border-radius: 70% 70% 70% 70%; /* Скруглённые края */
+    top: 0px; /* Позиционирование для маленькой рыбы */
+    left: 35px; /* Расположение относительно центра */
+}
+
+
+
+/* ===== Водоросли (3 дуги) ===== */
+.weed {
+}
+
+
+.w1 {
+    left: 45px;
+    position: absolute;
+    bottom: 25px;
+    height: 170px;
+    width: 110px;
+    box-shadow: -6px 1px 0 1px #66cc33;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 75% 25% 15% 45%;
+}
+
+
+.w2 {
+    left: 95px;
+    position: absolute;
+    bottom: 25px;
+    height: 160px;
+    width: 110px;
+    box-shadow: -4px 1px 0 1px #66cc33;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 75% 25% 25% 45%;
+}
+
+.w3 {
+    transform: scaleX(-1);
+    left: 75px;
+    position: absolute;
+    bottom: 25px;
+    height: 160px;
+    width: 110px;
+    box-shadow: -4px 1px 0 1px #66cc33;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 75% 25% 25% 45%;
+}
+
+/* ===== Рыбы ===== */
+.fish {
+    position: absolute;
+    background: #facc15;
+    border-radius: 50%;
+}
+
+.fish-big {
+    width: 64px;
+    height: 32px;
+    top: 55px;
+    left: 35px;
+    transform: rotate(-15deg);
+    background: linear-gradient(95deg, #f6c400, #fffae9);
+}
+
+.fish-small {
+    width: 46px;
+    height: 24px;
+    top: 105px;
+    left: 95px;
+    transform: scaleX(-1);
+    background: linear-gradient(95deg, #f6c400, #fffae9);
+}
+
+/* Глаз */
+.eye {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: black;
+    border-radius: 50%;
+}
+.fish-big .eye{
+    top: 8px;
+    right: 10px;
+}
+.fish-small .eye{
+    top: 8px;
+    right: 5px;
+}
+
+/* ===== Жабры — 3 вертикальных полукруга ===== */
+.fish-big .gill {
+    position: absolute;
+    width: 12px;
+    height: 11px;
+    border-right-color: transparent;
+    border-radius: 50% 50% 50% 50%;
+    transform: translateX(-9px);
+}
+
+.fish-small .gill{
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-right-color: transparent;
+    border-radius: 50% 50% 50% 50%;
+    transform: translateX(-9px);
+}
+.fish-big .g1 {
+    top: 0px;
+    box-shadow: inset 2px 0 0px #e11d48;
+}
+.fish-big .g2 {
+    transform: translateX(-10px);
+    top: 11px;
+    box-shadow: inset 2px 0 0px#e11d48;
+}
+.fish-big .g3 {
+    transform: rotate(-15deg) translateX(-9px);
+    top: 19px;
+    box-shadow: inset  2px 0 0px#e11d48;
+}
+
+.g4 {
+    top: 0px;
+    box-shadow: inset 2px 0 0px #e11d48;
+}
+.g5 {
+    top: 8px;
+    box-shadow: inset 2px 0 0px#e11d48;
+}
+.g6 {
+    top: 16px;
+    box-shadow: inset  2px 0 0px#e11d48;
+}
+
+
+/* Хвосты */
+.fish-small .tail {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #facc15;
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    left: -12px;
+    top: 4px;
+}
+.fish-small .tail::after {
+    content: "";
+    position: absolute;
+    right: 14px;
+    top: -3px;
+    width: 27px;
+    height: 27px;
+    background: white; /* цвет фона */
+    border-radius: 50%;
+}
+
+.fish-big .tail{
+    scale: 1.5;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #facc15;
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    left: -14px;
+    top: 6px;
+}
+.fish-big .tail::after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: -5px;
+    width: 30px;
+    height: 30px;
+    background: white; /* цвет фона картинки */
+    border-radius: 50% 50% 67% 50%;
+}
