@@ -1,3 +1,9 @@
+p{
+    text-align: left;
+}
+
+
+
 .drag-area{
     position: relative;
     height: 585px;
