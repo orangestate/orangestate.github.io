@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/images/favicon.svg">
+    <title>Весёлый текст</title>
+    <link rel="stylesheet" href="styles/funny_text_style.css">
+</head>
+<body>
+
+<div id="confetti" class="confetti hidden">
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+</div>
+
+<div class="app">
+    <div class="snow-block"></div>
+
+    <!-- Авторизация -->
+    <section id="auth-screen" class="screen active">
+        <div class="card">
+            <h1 id="freaky-text">Весёлый текст</h1>
+            <label for="player-name">Введите имя игрока:</label>
+            <input id="player-name" type="text" placeholder="Ваше имя" maxlength="15">
+            <button id="auth-start-btn">Продолжить</button>
+        </div>
+    </section>
+
+    <!-- Меню -->
+    <section id="menu-screen" class="screen">
+        <div class="card">
+            <h2 id="settings">Настройки игры</h2>
+
+            <div class="row">
+                <label for="mode">Режим игры:</label>
+                <select id="mode">
+                    <option value="assemble">Собрать предложение</option>
+                    <option value="pos">Сортировка по частям речи</option>
+                    <option value="objects">Выбор по признаку</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <label for="difficulty">Сложность:</label>
+                <select id="difficulty">
+                    <option value="easy">Лёгкая</option>
+                    <option value="medium">Средняя</option>
+                    <option value="hard">Сложная</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <span>Игрок: <span id="menu-player-name"></span></span>
+            </div>
+
+            <button id="start-game-btn">Начать</button>
+        </div>
+
+        <!-- Таблица лидеров -->
+        <div class="card">
+            <h3>Таблица лидеров</h3>
+            <div id="leaderboard" class="recent-games"></div>
+        </div>
+
+        <button id="back-to-auth-btn">Выйти</button>
+    </section>
+
+    <!-- Режим 1: Собрать предложение -->
+    <section id="game-screen" class="screen">
+        <header class="game-header">
+            <div>Игрок: <span id="game-player-name"></span></div>
+            <div>Режим: <span id="game-difficulty-label"></span></div>
+            <div>Время: <span id="timer">00</span> сек</div>
+            <div>Очки: <span id="score">0</span></div>
+        </header>
+
+        <main class="game-main">
+            <div class="card">
+                <h3>Соберите предложение</h3>
+                <div id="assembled-sentence" class="assembled"></div>
+            </div>
+
+            <div class="card">
+                <h3>Нажимайте слова в правильном порядке</h3>
+                <div id="words-container" class="words"></div>
+            </div>
+        </main>
+
+        <div id="final-result" class="final-card hidden"></div>
+
+        <footer class="game-footer">
+            <button id="next-round-btn" class="hidden">Следующее предложение</button>
+            <button id="back-to-menu-btn">В меню</button>
+            <div id="message" class="message"></div>
+        </footer>
+    </section>
+
+    <!-- Режим 2: Сортировка -->
+    <section id="pos-screen" class="screen">
+        <div id="pos-final-result" class="final-card hidden"></div>
+
+        <header class="game-header">
+            <div>Игрок: <span id="pos-player-name"></span></div>
+            <div>Режим: Сортировка</div>
+            <div>Время: <span id="pos-timer">00</span> сек</div>
+            <div>Очки: <span id="pos-score">0</span></div>
+        </header>
+
+        <main class="game-main">
+            <div class="card">
+                <h3>Перетащите слова в правильные группы</h3>
+                <div id="pos-words" class="words"></div>
+            </div>
+
+            <div class="card">
+                <h3>Группы</h3>
+                <div class="pos-groups">
+                    <div class="pos-group" data-pos="noun">
+                        <h4>Существительные</h4>
+                        <div class="pos-dropzone"></div>
+                    </div>
+                    <div class="pos-group" data-pos="verb">
+                        <h4>Глаголы</h4>
+                        <div class="pos-dropzone"></div>
+                    </div>
+                    <div class="pos-group" data-pos="adj">
+                        <h4>Прилагательные</h4>
+                        <div class="pos-dropzone"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="game-footer">
+            <button id="pos-back-btn">В меню</button>
+            <div id="pos-message" class="message"></div>
+        </footer>
+    </section>
+
+    <!-- Режим 3: Выбор по признаку -->
+    <section id="objects-screen" class="screen">
+        <div id="objects-final-result" class="final-card hidden"></div>
+
+        <header class="game-header">
+            <div>Игрок: <span id="objects-player-name"></span></div>
+            <div>Режим: <span id="objects-difficulty-label"></span></div>
+            <div>Время: <span id="objects-timer">00</span> сек</div>
+            <div>Очки: <span id="objects-score">0</span></div>
+        </header>
+
+        <main class="game-main">
+            <div class="card">
+                <h3 id="objects-question">Вопрос появится здесь</h3>
+            </div>
+
+            <div class="card">
+                <h3>Выберите подходящие объекты</h3>
+                <div id="objects-container" class="words"></div>
+            </div>
+        </main>
+
+        <footer class="game-footer">
+            <button id="objects-back-btn">В меню</button>
+            <div id="objects-message" class="message"></div>
+            <button id="objects-check-btn">Проверить</button>
+        </footer>
+    </section>
+
+</div>
+
+<script src="scripts/data.js"></script>
+<script src="scripts/storage.js"></script>
+<script src="scripts/game.js"></script>
+<script src="scripts/pos_data.js"></script>
+<script src="scripts/pos_game.js"></script>
+<script src="scripts/objects_data.js"></script>
+<script src="scripts/objects_game.js"></script>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
